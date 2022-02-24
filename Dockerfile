@@ -17,5 +17,5 @@ FROM alpine:3.14.0
 
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=build /popeye/execs/popeye /bin/popeye
-
+RUN apk --no-cache add wget
 ENTRYPOINT [ "/bin/popeye" ]
