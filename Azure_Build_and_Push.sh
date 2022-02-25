@@ -18,7 +18,7 @@ az acr login -n $registryName
 # alternative multi-arch build and push to Azure Registry, for future use ;-)
 docker buildx build \
   --output=type=registry \
-  --platform linux/amd64 \
+  --platform linux/arm64,linux/amd64 \
   -t $imagePath \
   .
 
